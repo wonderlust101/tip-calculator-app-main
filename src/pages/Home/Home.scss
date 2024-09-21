@@ -1,0 +1,14 @@
+@use '../../assets/styles/abstract' as a;
+
+.home {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 2.5rem;
+  min-height: 100vh;
+  background-color: a.$clr-background;
+  
+  @include a.breakpoint(medium) {
+    gap: 5.5rem;
+  }
+}

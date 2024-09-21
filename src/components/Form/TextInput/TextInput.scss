@@ -1,0 +1,45 @@
+@use  '../../../assets/styles/abstract' as a;
+
+.text-input {
+  display: grid;
+  gap: 0.5rem;
+
+  &__field {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    //color: a.$clr-neutrals-white;
+    //background-color: a.$clr-primary-color-blue-500;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    outline: none !important;
+    
+    &::placeholder {
+      //color: a.$clr-neutrals-white;
+      opacity: 0.4;
+    }
+
+    &:focus {
+      //border: 2px solid a.$clr-primary-color-cyan;
+    }
+
+    &--error,
+    &--error:focus {
+      //border: 2px solid a.$clr-errors;
+    }
+  }
+
+  &__error-icon {
+    display: none;
+    position: absolute;
+    right: 1.25rem;
+    bottom: 2.90rem;
+  }
+
+  &__status {
+    text-align: left;
+    font-size: 0.75rem;
+    //color: a.$clr-errors;
+  }
+}

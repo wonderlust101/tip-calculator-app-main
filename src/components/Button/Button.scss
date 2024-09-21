@@ -1,0 +1,23 @@
+@use  '../../assets/styles/abstract' as a;
+
+.button {
+  width: 100%;
+  padding: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  
+  &--cyan {
+    color: a.$clr-primary-color-blue-900;
+    background-color: a.$clr-primary-color-cyan;
+    border: 2px solid transparent;
+    
+    &:hover {
+      color: a.$clr-neutrals-white;
+      background-color: a.$clr-primary-color-blue-900;
+      border: 2px solid a.$clr-primary-color-cyan;
+    }
+  }
+}
