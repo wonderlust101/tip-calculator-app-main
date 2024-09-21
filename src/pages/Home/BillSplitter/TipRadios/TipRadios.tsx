@@ -17,6 +17,8 @@ export default function TipRadios({onChange}: TipRadiosProps) {
     const [customTip, setCustomTip] = useState('');
     const [selectedTipRate, setSelectedTipRate] = useState<number | null>(null);
 
+    // TODO: Understand this code
+    // TODO: Cleanup the code
     // Handle radio button selection
     function onTipRateChange(event: React.ChangeEvent<HTMLInputElement>) {
         const selectedRate = parseInt(event.target.value, 10);
@@ -47,8 +49,6 @@ export default function TipRadios({onChange}: TipRadiosProps) {
                         onChange={onTipRateChange}/>
                 </div>
             ))}
-            
-            <p>{}</p>
             
             <TextInput id='customTip' 
                        type='number' 

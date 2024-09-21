@@ -40,7 +40,8 @@ export default function BillSplitter() {
                            value={numOfPeople}
                            onChange={handleNumOfPeopleChange}/>
             </div>
-            
+
+            // TODO: Get the below to another component
             <div>
                 <p>{bill}</p>
                 <p>{numOfPeople}</p>
