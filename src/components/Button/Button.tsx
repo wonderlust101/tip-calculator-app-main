@@ -6,7 +6,7 @@ type ButtonProps = {
     className: string;
     destination?: string;
     type?: string;
-    onClick: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+    onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }
 
 export default function Button({children, className, destination, onClick}: ButtonProps): React.JSX.Element {

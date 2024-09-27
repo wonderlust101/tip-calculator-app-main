@@ -7,19 +7,12 @@ type TipRadiosProps = {
     reset: boolean;
 }
 
-const tipRates: number[] = [
-    5,
-    10,
-    15,
-    25,
-    50
-]
+const tipRates: number[] = [5, 10, 15, 25, 50]
 
 export default function TipRadios({onChange, reset}: TipRadiosProps) {
     const [customTip, setCustomTip] = useState('');
     const [selectedTipRate, setSelectedTipRate] = useState<number | null>(null);
-
-    // Reset logic - When the reset prop changes, reset both customTip and selectedTipRate
+    
     useEffect(() => {
         if (reset) {
             setCustomTip('');
@@ -27,22 +20,18 @@ export default function TipRadios({onChange, reset}: TipRadiosProps) {
         }
     }, [reset]);
     
-    // TODO: Understand this code
-    // TODO: Cleanup the code
-    // Handle radio button selection
     function onTipRateChange(event: React.ChangeEvent<HTMLInputElement>) {
         const selectedRate = parseInt(event.target.value, 10);
-        setSelectedTipRate(selectedRate);  // Set selected radio button
-        setCustomTip('');  // Reset custom tip value
-        onChange(event);  // Trigger the parent onChange handler
+        setSelectedTipRate(selectedRate);
+        setCustomTip('');
+        onChange(event);
     }
-
-    // Handle custom tip input change
+    
     function onCustomTipChange(event: React.ChangeEvent<HTMLInputElement>) {
         const value = event.target.value;
-        setCustomTip(value);  // Update the custom tip state
-        setSelectedTipRate(null);  // Deselect the radio buttons
-        onChange(event);  // Trigger the parent onChange handler
+        setCustomTip(value);
+        setSelectedTipRate(null);
+        onChange(event);
     }
     
     return (

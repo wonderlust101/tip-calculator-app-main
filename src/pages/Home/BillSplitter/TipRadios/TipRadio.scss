@@ -17,6 +17,7 @@
     color: #FFF;
     transform: translate(-50%, -50%);
     z-index: 1;
+    cursor: pointer;
   }
 
   &__button {
@@ -29,6 +30,7 @@
     border-radius: 0.3rem;
     background-color: #00474B;
     transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
 
     &:hover {
       background-color: #9FE8DF;

@@ -66,8 +66,7 @@ export default function BillSplitter() {
                            value={numOfPeople ? numOfPeople : ''}
                            onChange={handleNumOfPeopleChange}/>
             </div>
-
-            {/*TODO: Get the below to another component*/}
+            
             <div className="bill-splitter-results">
                 <div className="bill-splitter-results__results">
                     <div className="bill-splitter-results__row">
