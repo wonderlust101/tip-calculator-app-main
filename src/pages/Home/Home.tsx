@@ -5,10 +5,10 @@ import BillSplitter from "./BillSplitter/BillSplitter.tsx";
 export default function Home() {
 
     return (
-        <div className='home'>
+        <div className='home grid-bleed'>
             <Header/>
             
-            <main>
+            <main className='home__content'>
                 <BillSplitter/>
             </main>
             

@@ -4,11 +4,15 @@
   display: grid;
   justify-content: center;
   align-content: center;
-  gap: 2.5rem;
+  row-gap: 2.5rem;
   min-height: 100vh;
   background-color: a.$clr-background;
   
   @include a.breakpoint(medium) {
-    gap: 5.5rem;
+    row-gap: 5.5rem;
+  }
+  
+  &__content {
+    grid-area: 2/2;
   }
 }

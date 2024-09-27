@@ -1,7 +1,13 @@
+@use '/src/assets/styles/abstract' as a;
+
 .tip-radio {
   display: grid;
-  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr;
   gap: 1rem;
+
+  @include a.breakpoint(medium) {
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  }
 
   &__container {
     position: relative;
@@ -14,7 +20,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
-    color: #FFF;
+    color: #FFFFFF;
     transform: translate(-50%, -50%);
     z-index: 1;
     cursor: pointer;
@@ -63,7 +69,7 @@
   &__input {
     font-size: 1.5rem;
     color: #547878;
-    
+
     &::placeholder {
       text-align: center;
     }

@@ -21,7 +21,7 @@ export default function Form({children, className, legend, submitLabel, onSubmit
                 {children}
             </fieldset>
 
-            <Button className='button button--cyan' type="submit">{submitLabel}</Button>
+            <Button className='button' type="submit">{submitLabel}</Button>
         </form>
     )
 }
