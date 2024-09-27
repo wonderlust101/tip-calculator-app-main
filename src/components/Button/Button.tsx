@@ -6,13 +6,14 @@ type ButtonProps = {
     className: string;
     destination?: string;
     type?: string;
+    onClick: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }
 
-export default function Button({children, className, destination}: ButtonProps): React.JSX.Element {
+export default function Button({children, className, destination, onClick}: ButtonProps): React.JSX.Element {
     const Component = destination ? 'a' : 'button';
 
     return (
-        <Component href={destination} className={'button ' + className}>
+        <Component onClick={onClick} href={destination} className={'button ' + className}>
             {children}
         </Component>
     );

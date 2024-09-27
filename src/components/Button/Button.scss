@@ -2,22 +2,21 @@
 
 .button {
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.05rem;
+  text-transform: uppercase;
   border: none;
-  border-radius: 2rem;
+  border-radius: 0.3rem;
   cursor: pointer;
   
-  &--cyan {
-    color: a.$clr-primary-color-blue-900;
-    background-color: a.$clr-primary-color-cyan;
-    border: 2px solid transparent;
+  &--green {
+    color: #00474B;
+    background-color: #26C2AE;
     
     &:hover {
-      color: a.$clr-neutrals-white;
-      background-color: a.$clr-primary-color-blue-900;
-      border: 2px solid a.$clr-primary-color-cyan;
+      background-color: #9FE8DF;
     }
   }
 }

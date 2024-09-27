@@ -4,18 +4,19 @@ import './TextInput.scss'
 type TextInputProps = {
     id: string;
     type: string;
+    className?: string;
     status?: string;
     label?: string;
     placeholder?: string;
     icon?: string;
     errorText?: string;
     isRequired: boolean;
-    value: string;
+    value: string | number;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function TextInput({
-                                      id, type, status, label, placeholder, icon, errorText, isRequired,
+                                      id, type, className, status, label, placeholder, icon, errorText, isRequired,
                                       value, onChange
                                   }: TextInputProps) {
     return (
@@ -24,7 +25,7 @@ export default function TextInput({
                 <label className="text-input__label" htmlFor={id}>{label}</label> :
                 <label className="sr-only" htmlFor={id}>{label}</label>}
 
-            <input className={"text-input__field " + (status === '' ? '': 'text-input__field--' + status)}
+            <input className={"text-input__field " + (status === '' ? '': 'text-input__field--' + status) + ` ${className}`}
                    id={id}
                    type={type}
                    placeholder={placeholder}

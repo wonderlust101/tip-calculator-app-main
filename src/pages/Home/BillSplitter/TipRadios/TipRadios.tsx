@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import TextInput from "../../../../components/Form/TextInput/TextInput.tsx";
+import './TipRadio.scss'
 
 type TipRadiosProps = {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    reset: boolean;
 }
 
 const tipRates: number[] = [
@@ -13,10 +15,18 @@ const tipRates: number[] = [
     50
 ]
 
-export default function TipRadios({onChange}: TipRadiosProps) {
+export default function TipRadios({onChange, reset}: TipRadiosProps) {
     const [customTip, setCustomTip] = useState('');
     const [selectedTipRate, setSelectedTipRate] = useState<number | null>(null);
 
+    // Reset logic - When the reset prop changes, reset both customTip and selectedTipRate
+    useEffect(() => {
+        if (reset) {
+            setCustomTip('');
+            setSelectedTipRate(null);
+        }
+    }, [reset]);
+    
     // TODO: Understand this code
     // TODO: Cleanup the code
     // Handle radio button selection
@@ -36,21 +46,23 @@ export default function TipRadios({onChange}: TipRadiosProps) {
     }
     
     return (
-        <div>
+        <div className='tip-radio'>
             {tipRates.map((tipRate) => (
-                <div key={tipRate}>
-                    <label htmlFor={"tipAt" + tipRate}>{tipRate}%</label>
+                <div className='tip-radio__container' key={tipRate}>
                     <input
-                        type="radio" 
+                        type="radio"
+                        className='tip-radio__button'
                         name="tipRate" 
                         id={"tipAt" + tipRate} 
                         value={tipRate}
                         checked={selectedTipRate === tipRate}
                         onChange={onTipRateChange}/>
+                    <label className='tip-radio__label'  htmlFor={"tipAt" + tipRate}>{tipRate}%</label>
                 </div>
             ))}
             
             <TextInput id='customTip' 
+                       className='tip-radio__input'
                        type='number' 
                        isRequired={true} 
                        placeholder='Custom' 

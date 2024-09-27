@@ -1,5 +1,66 @@
-// TODO: Style the component
-
 .bill-splitter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 2rem;
   background-color: white;
+  border-radius: 1.5rem;
+  max-width: 70rem;
+
+  &__inputs {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  &__bill-input {
+    font-size: 1.5rem;
+    color: #00474B;
+    background: url('/images/icon-dollar.svg') no-repeat center left 1.2rem;
+  }
+
+  &__people-input {
+    font-size: 1.5rem;
+    color: #00474B;
+    background: url('/images/icon-person.svg') no-repeat center left 1.2rem;
+  }
+}
+
+.bill-splitter-results {
+  display: grid;
+  grid-template-rows: max-content max-content;
+  align-content: space-between;
+  padding: 2.5rem 2.5rem;
+  background-color: #00474B;
+  border-radius: 1rem;
+
+  &__results {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+  }
+
+  &__label-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  &__label-rate {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #7F9D9F;
+  }
+
+  &__amount {
+    color: #26C2AE;
+    text-align: right;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.0625rem;
+  }
 }

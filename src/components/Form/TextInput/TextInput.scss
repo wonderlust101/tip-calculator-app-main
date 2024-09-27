@@ -2,31 +2,36 @@
 
 .text-input {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.25rem;
 
   &__field {
     width: 100%;
-    padding: 1rem 1.25rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
     font-weight: 700;
-    //color: a.$clr-neutrals-white;
-    //background-color: a.$clr-primary-color-blue-500;
-    border-radius: 2rem;
+    text-align: right;
+    background-color: #F3F9FA;
+    border-radius: 0.3rem;
     border: 2px solid transparent;
     outline: none !important;
-    
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
     &::placeholder {
-      //color: a.$clr-neutrals-white;
       opacity: 0.4;
     }
 
     &:focus {
-      //border: 2px solid a.$clr-primary-color-cyan;
+      border: 2px solid #26C2AE;
     }
 
     &--error,
     &--error:focus {
-      //border: 2px solid a.$clr-errors;
+      border: 2px solid #E17052;
     }
   }
 
